@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
-
+import "./styles.css";
 function createRandomPost() {
   return {
     title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,
