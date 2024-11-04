@@ -62,8 +62,10 @@ function PostProvider({ children }) {
 }
 
 // Custom hook for consuming the PostContext
-function usePostContext() {
-  return useContext(PostContext);
+function usePosts() {
+  const context = useContext(PostContext);
+  if (context === undefined) throw new Error("PostProvider");
+  return context;
 }
 
-export { PostProvider, PostContext, createRandomPost };
+export { PostProvider, usePosts, createRandomPost };
